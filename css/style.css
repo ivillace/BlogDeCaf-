@@ -4,6 +4,7 @@
     --Primario:#784D3C;
     --Blanco:#FFFFFF;
     --Negro:#000000;
+    --Gris: #e1e1e1;
 
 }
 html{
@@ -30,8 +31,9 @@ body{
 }
 /* Globales */
 .contenedor{
-    max-width: 120rem;
-    width: 90%;
+    /* max-width: 120rem;
+    width: 90%; */
+    width: min(90%, 120rem);
     margin: 0 auto;
 
 
@@ -42,6 +44,7 @@ a{
 }
 h1,h2,h3,h4{
     font-family: var(--FuenteHeading);
+    line-height: 1.2;
 }
 h1{
     font-size: 4.8rem;
@@ -58,10 +61,26 @@ h4{
 img{
     max-width: 100%;
 }
+.boton{
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--Blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-family: var(--FuenteHeading);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+@media(min-width: 768px) {
+     .boton{
+        display: inline-block;
+     }
+}
 /* Header */
 .header{
     background-image: url(../img/banner.jpg);
-    height: 60rem;
+    height: 65rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -71,6 +90,7 @@ img{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
      }
 }
 @media(min-width: 768px) {
@@ -97,7 +117,53 @@ img{
 }
 .header__texto{
     margin-top: 15rem;
+
     text-align: center;
     color: var(--Blanco);
-    line-height: 1.5;
+    
+}
+/* Blog */
+@media(min-width: 768px) {
+     .contenido-Principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+     }
+}
+/* Cursos */
+.cursos{
+    list-style: none;
+}
+.entrada{
+    border-bottom: 1px solid var(--Gris);
+    margin-bottom: 2rem;
+}
+.entrada:last-of-type{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.boton--primario{
+    background-color: var(--Negro);
+}
+.boton--secundario{
+    background-color: var(--Primario);
+}
+
+
+.widget-curso__label{
+    font-family: var(--FuenteHeading);
+    font-weight: 700;
+}
+.widget-curso__info{
+    font-weight: normal;
+}
+.widget-curso__label,
+.widget-curso__info{
+    font-size: 2rem;
+}
+/* Footer */
+.footer{
+    background-color: var(--Negro);
+    margin-top: 4rem;
+    padding: 3rem 0;
 }
